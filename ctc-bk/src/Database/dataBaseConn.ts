@@ -10,11 +10,15 @@ const conToDatabase = async () => {
 
 	try {
 		const terkoneksi = await mongoose.connect(dbConnectString);
-		console.log("Database connected successfully", terkoneksi.connection.host, terkoneksi.connection.name);
+		console.log(
+			"Database connected successfully",
+			terkoneksi.connection.host,
+			terkoneksi.connection.name,
+		);
 	} catch (error) {
 		console.error("Database connection error:", error);
 		process.exit(1);
 	}
 };
 
-export default conToDatabase ;
+export default conToDatabase;

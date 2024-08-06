@@ -5,17 +5,21 @@ import contactRouter from "./routes/contactRouting";
 import userRouter from "./routes/userRouting";
 import itemRouter from "./routes/itemRouting";
 import cors from "cors";
+import type { Response } from "express";
 const app = express();
 const port = process.env.PORT || 5000;
 
-// conToDatabase();
+conToDatabase();
 
 const corsOptions = {
 	origin: "https://riylunz.website",
 	credentials: true,
 };
 
-app.get("/", conToDatabase);
+
+app.get("/", (req, res: Response) => {
+    res.status(200).json({ test: "Kamu berhasil masuk" });
+});
 
 app.use(cors(corsOptions));
 app.use(express.json());
