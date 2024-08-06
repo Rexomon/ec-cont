@@ -4,7 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "bun --watch src/index.ts",
-		"build": "bun build src/index.ts"
+		"build": "npm build src/index.ts"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.8.3",
