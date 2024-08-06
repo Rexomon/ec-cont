@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 conToDatabase();
 
 const corsOptions = {
-	origin: "http://localhost:4518",
+	origin: "https://riylunz.website",
 	credentials: true,
 };
 
