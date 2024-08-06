@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "bun --watch src/index.ts",
-    "build": "tsc --output src/output",
-    "vercel-build": "hello"
+    "build": "bun build src/index.ts --outdir public",
+    "vercel-build": "bun run build"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
