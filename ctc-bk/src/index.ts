@@ -14,11 +14,7 @@ const corsOptions = {
 	origin: "http://localhost:4518",
 	credentials: true,
 };
-
-app.get("/wf", (req, res) => {
-    res.sendFile(`${__dirname}/wf.html`);
-});
-
+~
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
