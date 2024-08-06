@@ -1,6 +1,6 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import conToDatabase from "./Database/dataBaseConn";
+import conToDatabase from "./Database/dataBaseConn.ts";
 import contactRouter from "./routes/contactRouting";
 import userRouter from "./routes/userRouting";
 import itemRouter from "./routes/itemRouting";
