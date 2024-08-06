@@ -6,7 +6,7 @@ import userRouter from "./routes/userRouting";
 import itemRouter from "./routes/itemRouting";
 import cors from "cors";
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 
 conToDatabase();
 

@@ -17,4 +17,4 @@ const conToDatabase = async () => {
 	}
 };
 
-export default conToDatabase;
+export default conToDatabase ;

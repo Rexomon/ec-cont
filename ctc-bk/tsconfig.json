@@ -2,6 +2,7 @@
   "compilerOptions": {
     // Enable latest features
     "outDir": "./public",
+    "rootDir": "./src",
     "lib": ["ESNext", "DOM"],
     "target": "ESNext",
     "module": "ESNext",
@@ -24,5 +25,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
