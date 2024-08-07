@@ -11,4 +11,4 @@ COPY . .
 
 ENV NODE_ENV=production
 
-CMD [ "bun", "run", "index.ts" ]
+CMD [ "bun", "run", "dev" ]

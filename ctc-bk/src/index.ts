@@ -16,7 +16,6 @@ const corsOptions = {
 	credentials: true,
 };
 
-
 app.get("/", (req, res: Response) => {
     res.status(200).json({ test: "Kamu berhasil masuk" });
 });
