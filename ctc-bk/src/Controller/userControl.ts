@@ -94,6 +94,7 @@ export const userLogin = async (req: Request, res: Response) => {
 			res.cookie("token", AksesToken, {
 				httpOnly: true,
                 secure: true,
+                sameSite: "strict",
                 maxAge: 900000,
 			});
 			res.status(200).json({
