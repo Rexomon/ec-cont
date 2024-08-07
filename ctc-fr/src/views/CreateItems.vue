@@ -48,7 +48,7 @@ export default {
 		async createItems() {
 			try {
 				await axios.post(
-					`${import.meta.env.VITE_BK_PORT}/create-items`,
+					`${import.meta.env.VITE_BK_PORT}/item/create-items`,
 					this.item,
 					{
 						withCredentials: true,
