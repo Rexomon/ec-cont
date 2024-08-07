@@ -148,4 +148,27 @@ export default {
         padding-top: 100px; /* Tambahkan padding-top lebih besar untuk resolusi kecil */
     }
 }
+
+@media (max-width: 600px) {
+    .add-item-form {
+        padding: 15px;
+        border: none;
+        box-shadow: none;
+    }
+
+    .add-item-form h1 {
+        font-size: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
 </style>
