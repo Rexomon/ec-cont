@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package.json ./
 
 # Instal dependensi
-RUN npm install
+RUN bun install
 
 # Salin seluruh kode aplikasi
 COPY . .
@@ -17,4 +17,4 @@ COPY . .
 ENV NODE_ENV=production
 
 # Jalankan build script
-CMD ["npm", "run", "build"]
+CMD ["bun", "run", "build"]
