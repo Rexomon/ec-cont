@@ -26,30 +26,6 @@ export const getUserItems = async (
 	}
 };
 
-export const createItems = async (req: AuthenticatedRequest, res: Response) => {
-	try {
-		const { name, price, category, countInStock, description } = req.body;
-
-		if (!name || !price || !category || !countInStock || !description) {
-			res.status(400).json({ message: "All fields are required" });
-		}
-
-		if (req.user) {
-			const item = await itemModels.create({
-				name,
-				price,
-				category,
-				countInStock,
-				description,
-				seller_id: req.user.id,
-			});
-			res.status(201).json({ item });
-		}
-	} catch (error) {
-		res.status(403).json({ message: error });
-	}
-};
-
 export const updateItems = async (req: AuthenticatedRequest, res: Response) => {
 	try {
 		const { id } = req.params;

@@ -8,6 +8,7 @@
         <div v-for="item in filteredItems" :key="item._id" class="card">
           <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
+            <img v-if="item.image && item.image.url" :src="item.image.url" style="width: 100%; height: 200px; object-fit: cover;" />
             <p class="card-text">{{ item.description }}</p>
             <p class="card-text"><strong>Category:</strong> {{ item.category }}</p>
             <p class="card-text"><strong>Price:</strong> {{ formatPrice(item.price) }}</p>
@@ -60,6 +61,7 @@ export default {
 				);
 				this.items = isiItems.data.items;
 
+                console.log(this.items[0].image.url);
 				if (!isiItems.data.items) {
 					console.log("Kosong");
 				}

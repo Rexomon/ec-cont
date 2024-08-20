@@ -16,6 +16,10 @@
                     <input type="text" id="category" v-model="item.category" />
                 </div>
                 <div class="form-group">
+                    <label for="image">Gambar</label>
+                    <input type="file" id="image" @change="onFileChange" />
+                </div>
+                <div class="form-group">
                     <label for="countInStock">Jumlah Stok</label>
                     <input type="number" id="countInStock" v-model="item.countInStock" />
                 </div>
@@ -41,15 +45,31 @@ export default {
 				category: "",
 				countInStock: 0,
 				description: "",
+                image: null,
 			},
 		};
 	},
 	methods: {
+        onFileChange(event) {
+            this.item.image = event.target.files[0];
+        },
+
 		async createItems() {
 			try {
+                const formData = new FormData();
+                formData.append('name', this.item.name);
+                formData.append('price', this.item.price);
+                formData.append('category', this.item.category);
+                formData.append('countInStock', this.item.countInStock);
+                formData.append('description', this.item.description);
+                if (this.item.image) {
+                    formData.append('image', this.item.image);
+                }
+
+                console.log(formData);
 				await axios.post(
 					`${import.meta.env.VITE_BK_PORT}/item/create-items`,
-					this.item,
+					formData,
 					{
 						withCredentials: true,
 					},
