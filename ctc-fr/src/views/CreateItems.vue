@@ -162,14 +162,30 @@ export default {
     background-color: #0056b3;
 }
 
+
 /* Media query untuk resolusi kecil */
+@media (max-width: 1366px) {
+    .add-item-form-container {
+        padding-top: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .add-item-form-container {
+        padding-top: 430px;
+    }
+}
+
 @media (max-width: 768px) {
     .add-item-form-container {
-        padding-top: 100px; /* Tambahkan padding-top lebih besar untuk resolusi kecil */
+        padding-top: 430px;
     }
 }
 
 @media (max-width: 600px) {
+    .add-item-form-container {
+        padding-top: 210px;
+    }
     .add-item-form {
         padding: 15px;
         border: none;
