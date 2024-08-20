@@ -8,7 +8,7 @@
         <div v-for="item in filteredItems" :key="item._id" class="card">
           <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
-            <img v-if="item.image && item.image.url" :src="item.image.url" style="width: 100%; object-fit: cover;" />
+            <img v-if="item.image && item.image.url" :src="item.image.url" style="width: 100%; height: 150px ;object-fit: cover;" />
             <p class="card-text">{{ item.description }}</p>
             <p class="card-text"><strong>Category:</strong> {{ item.category }}</p>
             <p class="card-text"><strong>Price:</strong> {{ formatPrice(item.price) }}</p>
