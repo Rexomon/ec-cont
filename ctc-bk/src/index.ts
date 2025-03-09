@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 conToDatabase();
 
 const corsOptions = {
-	origin: "https://riylunz.website",
+	origin: process.env.CLIENT_URL,
 	credentials: true,
 };
 

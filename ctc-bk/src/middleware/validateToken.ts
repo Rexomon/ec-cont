@@ -11,7 +11,7 @@ const ValidateToken = (req: AuthenticatedRequest, res: Response, next: NextFunct
         if (authenticated){
             try {
                 const decoded = verifyTok(authenticated);
-                req.user = decoded;
+                req.user = decoded as string;
                 next();
             } catch (error) {
                 res.status(401).json({ message: "Token invalid" });

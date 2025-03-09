@@ -1,9 +1,8 @@
 import express from "express";
 import multer from "multer";
 import mime from "mime-types";
-import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
-import type { Request, Response } from "express";
-import type { Readable } from "node:stream";
+import { S3Client } from "@aws-sdk/client-s3";
+import type { Response } from "express";
 import { Upload } from "@aws-sdk/lib-storage";
 import ValidateToken from "../middleware/validateToken";
 import type AuthenticatedRequest from "../extendedReq";
@@ -55,7 +54,7 @@ itemRouter.post(
 		}
 
 		const file = req.file;
-		const bucketName = process.env.CLOUDFLARE_BUCKET_NAME;
+		const bucketName = process.env.CLOUDFLARE_BUCKET_NAME as string;
 
 		if (!file) {
 			return res.status(400).send("No file uploaded");
